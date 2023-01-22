@@ -403,10 +403,7 @@ public class BotController {
             } else if (!isChat && modConfig.channelConfig.eventEmbeds) {
                 channel.sendMessageEmbeds(builder.build()).complete();
             } else {
-                if (username.equalsIgnoreCase("server")) {
-                    username = modConfig.webhookConfig.serverName;
-                }
-                channel.sendMessage(isChat ? username + ": " + message : message).complete();
+                channel.sendMessage(message).complete();
             }
         }
     }
